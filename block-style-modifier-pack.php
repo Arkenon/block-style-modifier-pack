@@ -10,6 +10,8 @@
  * Text Domain: block-style-modifier-pack
  */
 
+use Block_Style_Modifier_Pack\Modifiers;
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -18,6 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'BSMP_PLUGIN_VERSION', '1.0.0' );
 define( 'BSMP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BSMP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+
+//Register modifiers
+add_action( 'init', [ Modifiers::class, 'register' ] );
+
 
 if ( ! function_exists( "block_style_modifier_pack_enqueue_editor_assets" ) ) {
     /**
