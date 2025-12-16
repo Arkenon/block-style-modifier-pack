@@ -5,6 +5,10 @@ namespace Block_Style_Modifier_Pack;
 class Modifiers {
     public static function register() {
 
+        if ( ! function_exists( 'register_block_style_modifier' ) ) {
+            return;
+        }
+
         // Hover Effects
         register_block_style_modifier( 'core/image', [
             'name'        => 'zoom-on-hover',
@@ -46,7 +50,6 @@ class Modifiers {
             'category'    => __('Hover Effects', 'your-textdomain'),
         ] );
 
-
         // Caption Effects
         register_block_style_modifier( 'core/image', [
             'name'        => 'caption-overlay',
@@ -71,7 +74,6 @@ class Modifiers {
             'description' => __('Caption fades in on image hover', 'your-textdomain'),
             'category'    => __('Caption Effects', 'your-textdomain'),
         ] );
-
 
         // Overlay Effects
         register_block_style_modifier( 'core/image', [
