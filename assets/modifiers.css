@@ -1,106 +1,53 @@
 /* Hover Effects */
 
-.wp-block-image.zoom-on-hover img {
+.wp-block-image.bsmp-zoom-on-hover img, .wp-block-cover.bsmp-zoom-on-hover img {
     transition: transform 0.3s ease;
 }
-.wp-block-image.zoom-on-hover:hover img {
+
+.wp-block-image.bsmp-zoom-on-hover:hover img, .wp-block-cover.bsmp-zoom-on-hover:hover img {
     transform: scale(1.05);
 }
 
-.wp-block-image.grayscale-hover img {
+.wp-block-image.bsmp-grayscale-hover img, .wp-block-cover.bsmp-grayscale-hover img {
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
-.wp-block-image.grayscale-hover:hover img {
+
+.wp-block-image.bsmp-grayscale-hover:hover img, .wp-block-cover.bsmp-grayscale-hover img {
     filter: grayscale(0%);
 }
 
-.wp-block-image.rotate-on-hover img {
+.wp-block-image.bsmp-rotate-on-hover img, .wp-block-cover.bsmp-rotate-on-hover img {
     transition: transform 0.3s ease;
 }
-.wp-block-image.rotate-on-hover:hover img {
+
+.wp-block-image.bsmp-rotate-on-hover:hover img, .wp-block-cover.bsmp-rotate-on-hover img {
     transform: rotate(3deg);
 }
 
-.wp-block-image.hover-shadow img {
+.wp-block-image.bsmp-hover-shadow img, .wp-block-cover.bsmp-hover-shadow img {
     transition: box-shadow 0.3s ease;
 }
-.wp-block-image.hover-shadow:hover img {
+
+.wp-block-image.bsmp-hover-shadow:hover img, .wp-block-cover.bsmp-hover-shadow img {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-.wp-block-image.hover-blur img {
+.wp-block-image.bsmp-hover-blur img, .wp-block-cover.bsmp-hover-blur img {
     transition: filter 0.3s ease;
 }
-.wp-block-image.hover-blur:hover img {
+
+.wp-block-image.bsmp-hover-blur:hover img, .wp-block-cover.bsmp-hover-blur img {
     filter: blur(2px);
 }
 
-
-/* Caption Effects */
-
-.wp-block-image.caption-overlay {
-    position: relative;
-}
-.wp-block-image.caption-overlay figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 8px 12px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.wp-block-image.caption-slide-up {
-    position: relative;
-    overflow: hidden;
-}
-.wp-block-image.caption-slide-up figcaption {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
-    transition: bottom 0.3s ease;
-}
-.wp-block-image.caption-slide-up:hover figcaption {
-    bottom: 0;
-}
-
-.wp-block-image.caption-fade-in {
-    position: relative;
-}
-.wp-block-image.caption-fade-in figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
-    transition: opacity 0.3s ease;
-}
-.wp-block-image.caption-fade-in:hover figcaption {
-    opacity: 1;
-}
-
-
 /* Overlay Effects */
 
-.wp-block-image.hover-overlay-dark {
+.wp-block-image.bsmp-hover-overlay-dark, .wp-block-cover.bsmp-hover-overlay-dark {
     position: relative;
 }
-.wp-block-image.hover-overlay-dark::after {
+
+.wp-block-image.bsmp-hover-overlay-dark::after, .wp-block-cover.bsmp-hover-overlay-dark::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -108,14 +55,16 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.wp-block-image.hover-overlay-dark:hover::after {
+
+.wp-block-image.bsmp-hover-overlay-dark:hover::after, .wp-block-cover.bsmp-hover-overlay-dark:hover::after {
     opacity: 1;
 }
 
-.wp-block-image.hover-overlay-light {
+.wp-block-image.bsmp-hover-overlay-light. .wp-block-cover.bsmp-hover-overlay-light {
     position: relative;
 }
-.wp-block-image.hover-overlay-light::after {
+
+.wp-block-image.bsmp-hover-overlay-light::after, .wp-block-cover.bsmp-hover-overlay-light::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -123,6 +72,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.wp-block-image.hover-overlay-light:hover::after {
+
+.wp-block-image.bsmp-hover-overlay-light:hover::after, .wp-block-cover.bsmp-hover-overlay-light:hover::after {
     opacity: 1;
 }

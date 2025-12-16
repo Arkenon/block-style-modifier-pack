@@ -21,10 +21,22 @@ define( 'BSMP_PLUGIN_VERSION', '1.0.0' );
 define( 'BSMP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BSMP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+// Include necessary files
+require( BSMP_PLUGIN_DIR . 'includes/Modifiers.php' );
 
-//Register modifiers
-add_action( 'init', [ Modifiers::class, 'register' ] );
-
+if ( ! function_exists( "block_style_modifier_pack_register_modifiers" ) ) {
+    /**
+     * Register block style modifiers for the pack.
+     *
+     * @return void
+     * @since 1.0.0
+     */
+    function block_style_modifier_pack_register_modifiers() {
+        $modifiers = new Modifiers();
+        $modifiers->register();
+    }
+    add_action('init', 'block_style_modifier_pack_register_modifiers');
+}
 
 if ( ! function_exists( "block_style_modifier_pack_enqueue_editor_assets" ) ) {
     /**
@@ -43,24 +55,5 @@ if ( ! function_exists( "block_style_modifier_pack_enqueue_editor_assets" ) ) {
 
     }
 
-    add_action( 'enqueue_block_editor_assets', 'block_style_modifier_pack_enqueue_editor_assets' );
-}
-
-
-if ( ! function_exists( "block_style_modifier_pack_enqueue_frontend_styles" ) ) {
-    /**
-     * Enqueue frontend styles for block style modifier pack.
-     * @return void
-     * @since 1.0.0
-     */
-    function block_style_modifier_pack_enqueue_frontend_styles(): void {
-        wp_enqueue_style(
-            'block-style-modifier-pack-frontend-style',
-            BSMP_PLUGIN_URL.'/assets/modifiers.css',
-            [],
-            BSMP_PLUGIN_VERSION
-        );
-    }
-
-    add_action( 'wp_enqueue_scripts', 'block_style_modifier_pack_enqueue_frontend_styles' );
+    add_action( 'enqueue_block_assets', 'block_style_modifier_pack_enqueue_editor_assets' );
 }
