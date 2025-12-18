@@ -7,6 +7,10 @@
 
 namespace Block_Style_Modifier_Pack;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Modifiers {
     /**
      * Register block style modifiers.
@@ -15,7 +19,7 @@ class Modifiers {
      */
     public function register() {
 
-        if ( ! function_exists( 'register_block_style_modifier' ) ) {
+        if ( ! function_exists( 'block_style_modifiers_register_style' ) ) {
             return;
         }
 
@@ -31,7 +35,7 @@ class Modifiers {
      */
     private function registerImageModifiers() {
         // Hover Effects
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'zoom-on-hover',
             'label'       => __( 'Zoom on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-zoom-on-hover',
@@ -39,7 +43,7 @@ class Modifiers {
             'category'    => __( 'Hover Effects', 'block-style-modifier-pack' ),
         ] );
 
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'grayscale-hover',
             'label'       => __( 'Grayscale to Color', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-grayscale-hover',
@@ -47,7 +51,7 @@ class Modifiers {
             'category'    => __( 'Hover Effects', 'block-style-modifier-pack' ),
         ] );
 
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'rotate-on-hover',
             'label'       => __( 'Rotate on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-rotate-on-hover',
@@ -55,7 +59,7 @@ class Modifiers {
             'category'    => __( 'Hover Effects', 'block-style-modifier-pack' ),
         ] );
 
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'hover-shadow',
             'label'       => __( 'Shadow on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-hover-shadow',
@@ -63,7 +67,7 @@ class Modifiers {
             'category'    => __( 'Hover Effects', 'block-style-modifier-pack' ),
         ] );
 
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'hover-blur',
             'label'       => __( 'Blur on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-hover-blur',
@@ -72,7 +76,7 @@ class Modifiers {
         ] );
 
         // Overlay Effects
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'hover-overlay-dark',
             'label'       => __( 'Dark Overlay on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-hover-overlay-dark',
@@ -80,7 +84,7 @@ class Modifiers {
             'category'    => __( 'Overlay Effects', 'block-style-modifier-pack' ),
         ] );
 
-        register_block_style_modifier( [ 'core/image', 'core/cover' ], [
+        block_style_modifiers_register_style( [ 'core/image', 'core/cover' ], [
             'name'        => 'hover-overlay-light',
             'label'       => __( 'Light Overlay on Hover', 'block-style-modifier-pack' ),
             'class'       => 'bsmp-hover-overlay-light',
@@ -96,12 +100,12 @@ class Modifiers {
      */
     private function registerCommonModifiers() {
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'hide-sm',
             'label'        => 'Hide on Small Screens',
             'class'        => 'bsmp-hide-sm',
-            'description'  => 'Hide block on small (max-width: 600px) screens',
-            'category'     => 'Responsive',
+            'description'  => __( 'Hide block on small (max-width: 600px) screens' ),
+            'category'     => __( 'Responsive' ),
             'inline_style' => '
                 @media (max-width: 600px) {
                     .bsmp-hide-sm {
@@ -111,12 +115,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'hide-md',
             'label'        => 'Hide on Medium Screens',
             'class'        => 'bsmp-hide-md',
-            'description'  => 'Hide block on medium (max-width: 768px) screens',
-            'category'     => 'Responsive',
+            'description'  => __( 'Hide block on medium (max-width: 768px) screens' ),
+            'category'     => __( 'Responsive' ),
             'inline_style' => '
                 @media (max-width: 768px) {
                     .bsmp-hide-md {
@@ -126,12 +130,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'center-sm',
             'label'        => 'Center on Small Screens',
             'class'        => 'bsmp-center-sm',
-            'description'  => 'Align content center on small screens',
-            'category'     => 'Responsive',
+            'description'  => __( 'Align content center on small screens' ),
+            'category'     => __( 'Responsive' ),
             'inline_style' => '
                 @media (max-width: 600px) {
                     .bsmp-center-sm {
@@ -143,12 +147,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'center-md',
             'label'        => 'Center on Medium Screens',
             'class'        => 'bsmp-center-md',
-            'description'  => 'Align content center on medium screens',
-            'category'     => 'Responsive',
+            'description'  => __( 'Align content center on medium screens' ),
+            'category'     => __( 'Responsive' ),
             'inline_style' => '
                 @media (max-width: 768px) {
                     .bsmp-center-md {
@@ -160,12 +164,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'stack-lg',
             'label'        => 'Stack on Large Screens',
             'class'        => 'bsmp-stack-lg',
-            'description'  => 'Force vertical stack layout on large screens',
-            'category'     => 'Responsive',
+            'description'  => __( 'Force vertical stack layout on large screens' ),
+            'category'     => __( 'Responsive' ),
             'inline_style' => '
                 @media (min-width: 1024px) {
                     .bsmp-stack-lg {
@@ -175,12 +179,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'fade-in',
             'label'        => 'Fade In',
             'class'        => 'bsmp-fade-in',
-            'description'  => 'Fade in animation on load',
-            'category'     => 'Animations',
+            'description'  => __( 'Fade in animation on load' ),
+            'category'     => __( 'Animations' ),
             'inline_style' => '
                 @keyframes fadeIn {
                     from { opacity: 0; }
@@ -193,12 +197,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'bounce',
             'label'        => 'Bounce In',
             'class'        => 'bsmp-bounce',
-            'description'  => 'Bounce effect on load',
-            'category'     => 'Animations',
+            'description'  => __( 'Bounce effect on load' ),
+            'category'     => __( 'Animations' ),
             'inline_style' => '
                 @keyframes bounceIn {
                     0% { transform: scale(0.9); opacity: 0; }
@@ -211,12 +215,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'delay-2s',
             'label'        => 'Delay 2 Seconds',
             'class'        => 'bsmp-delay-2s',
-            'description'  => 'Add 2-second delay to animation',
-            'category'     => 'Animations',
+            'description'  => __( 'Add 2-second delay to animation' ),
+            'category'     => __( 'Animations' ),
             'inline_style' => '
                 .bsmp-delay-2s {
                     animation-delay: 2s !important;
@@ -224,12 +228,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'slide-up',
             'label'        => 'Slide Up',
             'class'        => 'bsmp-slide-up',
-            'description'  => 'Slide in from bottom',
-            'category'     => 'Animations',
+            'description'  => __( 'Slide in from bottom' ),
+            'category'     => __( 'Animations' ),
             'inline_style' => '
                 @keyframes slideUp {
                     from { transform: translateY(20px); opacity: 0; }
@@ -241,12 +245,12 @@ class Modifiers {
             ',
         ] );
 
-        register_block_style_modifier( '*', [
+        block_style_modifiers_register_style( '*', [
             'name'         => 'delay-1s',
             'label'        => 'Delay 1 Second',
             'class'        => 'bsmp-delay-1s',
-            'description'  => 'Add 1-second delay to animation',
-            'category'     => 'Animations',
+            'description'  => __( 'Add 1-second delay to animation' ),
+            'category'     => __( 'Animations' ),
             'inline_style' => '
                 .bsmp-delay-1s {
                     animation-delay: 1s !important;

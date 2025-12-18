@@ -40,14 +40,13 @@ Simply check the modifiers you want to apply. Multiple modifiers can be selected
 All modifiers generate standard CSS classes. You can override or extend any styling in your theme's CSS:
 
 ```css
-/* Override the lead text size */
-.is-lead-text {
-    font-size: 1.5em !important;
+/* Customize or override the style of blocks */
+.wp-block-image.bsmp-zoom-on-hover img, .wp-block-cover.bsmp-zoom-on-hover img {
+    transition: transform 0.3s ease;
 }
 
-/* Customize shadow strength */
-.has-subtle-shadow {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+.wp-block-image.bsmp-zoom-on-hover:hover img, .wp-block-cover.bsmp-zoom-on-hover:hover img {
+    transform: scale(1.05);
 }
 ```
 
@@ -65,10 +64,16 @@ All modifier styles are loaded efficiently as inline CSS only when needed. No ad
 
 Have ideas for additional modifiers? Found a bug? Contributions are welcome!
 
-## Credits
-
-Created to complement the Block Style Modifiers plugin and provide a solid foundation of useful utilities for WordPress content creators.
-
+- Fork the repository
+- Create your feature branch (`git checkout -b feature/my-feature`)
+- Commit your changes (`git commit -am 'Add some feature'`)
+- Push to the branch (`git push origin feature/my-feature`)
+- Open a pull request
+- Please ensure any pull requests adhere to the existing coding style and include appropriate tests where applicable.
+- For major changes, please open an issue first to discuss what you would like to change.
+- Please make sure to update tests as appropriate.
+- 
 ## License
 
-GPL v2 or later
+This project is licensed under the GPLv2 or later license. See the LICENSE file for details
+
